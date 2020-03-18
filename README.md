@@ -648,3 +648,10 @@ See [LICENSE.txt](./LICENSE.txt)
 # Preview
 [Using CouchDB with Meteor Accounts](https://github.com/mariobriggs/meteor-accounts-couchdb)
 
+# Running Tests
+
+Start an instance of couchdb 2.3 on localhost. The user name and password should be admin and admin.
+
+```
+COUCHDB_URL=http://admin:admin@localhost:5984 meteor test-packages ./
+```
