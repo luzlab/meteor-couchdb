@@ -35,10 +35,9 @@ Package.describe({
 });
 
 Npm.depends({
-  cloudant: "1.2.0",
+  "@cloudant/cloudant": "4.2.4",
   "double-ended-queue": "2.1.0-0",
-  "collections": "1.2.2"
-   
+  "collections": "5.1.9"
 });
 
 Package.onUse(function(api) {

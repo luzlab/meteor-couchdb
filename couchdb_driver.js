@@ -33,7 +33,7 @@
  */
 
 var path = Npm.require('path');
-var Cloudant = Npm.require('cloudant');
+var Cloudant = Npm.require('@cloudant/cloudant');
 var Fiber = Npm.require('fibers');
 var Future = Npm.require(path.join('fibers', 'future'));
 

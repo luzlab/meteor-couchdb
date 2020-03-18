@@ -96,30 +96,41 @@ Tasks.allow({
 
 ## API Reference  
 
-* [CouchDB.Database](#couchdbdatabase)  
-	- [database.find](#databasefindselectoroptions)  
-	- [database.findOne](#databasefindoneselectoroptions)  
-	- [database.insert](#databaseinsertdoccallback)  
-	- [database.update](#databaseupdatedocoptionscallback)  
-	- [database.upsert](#databaseupsertdoccallback)  
-	- [database.remove](#databaseremoveidcallback)  
-	- [database.allow](#databaseallowoptions)  
-	- [database.deny](#databasedenyoptions)
-	- [database.insertAttachment](#databaseinsertattachmentdocidfilenamedatacontenttypecallback)
-	- [database.removeAttachment](#databaseremoveattachmentdocidfilenameparamscallback)
-	- [database.getAttachmentAsBuffer](#databasegetattachmentasbufferdocidfilenameparamscallback)
-	- [database.pipeAttachment](#pipeattachmentresponsedocidfilenameparamscallback)
-* [CouchDB.Cursor](#couchdbcursor)  
-	- [cursor.forEach](#cursorforeachcallbackthisarg)  
-	- [cursor.map](#cursormapcallbackthisarg)  
-	- [cursor.fetch](#cursorfetch)  
-	- [cursor.count](#cursorcount)  
-	- [cursor.observe](#cursorobservecallbacks)  
-	- [cursor.observeChanges](#cursorobservechangescallbacks)  
-* [Query Syntax](#query-syntax)  
-	- [Selectors](#selectors)  
-	- [Sort specifiers](#sort-specifiers)  
-	- [Field Specifiers](#field-specifiers)
+- [couchdb](#couchdb)
+  - [Installation](#installation)
+  - [Database API](#database-api)
+  - [Publish/Subscribe](#publishsubscribe)
+  - [Latency compensation](#latency-compensation)
+  - [Permissions: allow/deny](#permissions-allowdeny)
+  - [API Reference](#api-reference)
+  - [CouchDB.Database](#couchdbdatabase)
+    - [database.find([selector],[options])](#databasefindselectoroptions)
+    - [database.findOne([selector],[options])](#databasefindoneselectoroptions)
+    - [database.insert(doc,[callback])](#databaseinsertdoccallback)
+    - [database.update(doc,[options],[callback])](#databaseupdatedocoptionscallback)
+    - [database.upsert(doc,[callback])](#databaseupsertdoccallback)
+    - [database.remove(id,[callback])](#databaseremoveidcallback)
+    - [database.allow(options)](#databaseallowoptions)
+    - [database.deny(options)](#databasedenyoptions)
+    - [database.insertAttachment(docId,fileName,data,contentType,[callback])](#databaseinsertattachmentdocidfilenamedatacontenttypecallback)
+    - [database.removeAttachment(docId,fileName,[params],[callback])](#databaseremoveattachmentdocidfilenameparamscallback)
+    - [database.getAttachmentAsBuffer(docId,fileName,[params],[callback])](#databasegetattachmentasbufferdocidfilenameparamscallback)
+    - [database.pipeAttachment(response,docId,fileName,[params],[callback])](#databasepipeattachmentresponsedocidfilenameparamscallback)
+  - [CouchDB.Cursor](#couchdbcursor)
+    - [cursor.forEach(callback,[thisArg])](#cursorforeachcallbackthisarg)
+    - [cursor.map(callback,[thisArg])](#cursormapcallbackthisarg)
+    - [cursor.fetch()](#cursorfetch)
+    - [cursor.count()](#cursorcount)
+    - [cursor.observe(callbacks)](#cursorobservecallbacks)
+    - [cursor.observeChanges(callbacks)](#cursorobservechangescallbacks)
+  - [Query Syntax](#query-syntax)
+    - [Selectors](#selectors)
+    - [Sort specifiers](#sort-specifiers)
+    - [Field specifiers](#field-specifiers)
+- [License](#license)
+- [Samples](#samples)
+- [Preview](#preview)
+- [Running Tests](#running-tests)
 
 		
 
@@ -655,3 +666,16 @@ Start an instance of couchdb 2.3 on localhost. The user name and password should
 ```
 COUCHDB_URL=http://admin:admin@localhost:5984 meteor test-packages ./
 ```
+
+With Meteor 1.9.2, 175 of 195 tests are passing. 
+
+![test results](./test-results.png)
+
+After updating collections to 5.1.9, 180 of 195 tests pass.
+
+![test results](./test-results-2.png)
+
+
+After updating cloudant to @cloudant/cloudant 4.2.4, 180 of 195 tests pass.
+
+![test results](./test-results-2.png)
